@@ -10,6 +10,35 @@
 
 let computerchoice = function getComputerChoice() {
   let mathrandom = Math.floor(Math.random() * 3) + 1;
-  return mathrandom;
+  if (mathrandom === 1) {
+    return "Rock";
+  } else if (mathrandom === 2) {
+    return "paper";
+  } else {
+    return "Scissors";
+  }
 };
 console.log(computerchoice());
+
+let humanchoice = function getHumanChoice() {
+  let humanPrompt = prompt("Enter 'rock' 'paper' or 'scissors'").toLowerCase();
+  if (humanPrompt === "rock") {
+    return "rock";
+  }
+  if (humanPrompt === "paper") {
+    return "paper";
+  }
+  if (humanPrompt === "scissors") {
+    return "scissors";
+  } else {
+    return "Please enter valid value for rock paper or scissors";
+  }
+};
+console.log(humanchoice());
+
+let humanScore = 0;
+let computerScore = 0;
+
+function playround(humanChoice, computerChoice) {}
+const humanSelection = humanchoice;
+const computerSelection = computerchoice;
