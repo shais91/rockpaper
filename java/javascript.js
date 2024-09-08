@@ -8,6 +8,8 @@
 // display win or loose message
 // add reset button to restart the game
 
-let logs = console.log;
-
-logs("Hello world");
+let computerchoice = function getComputerChoice() {
+  let mathrandom = Math.floor(Math.random() * 3) + 1;
+  return mathrandom;
+};
+console.log(computerchoice());
