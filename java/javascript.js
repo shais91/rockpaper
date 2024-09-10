@@ -9,6 +9,7 @@ let computerchoice = function getComputerChoice() {
     return "scissors";
   }
 };
+console.log("Designed By ST");
 // const computerSelection = computerchoice();
 // console.log(computerSelection);
 let humanchoice = function getHumanChoice() {
@@ -45,6 +46,9 @@ function playround(humanChoice, computerChoice) {
 }
 
 function playGame() {
+  humanScore = 0;
+  computerScore = 0;
+  console.log("Game starting");
   for (let i = 0; i < 5; i++) {
     const humanSelection = humanchoice();
     const computerSelection = computerchoice();
@@ -64,9 +68,15 @@ function playGame() {
   } else if (computerScore > humanScore) {
     console.log("computer wins the game");
   } else {
-    ("game is a draw");
+    console.log("game is a draw");
   }
 }
 let humanScore = 0;
 let computerScore = 0;
 playGame();
+let continuegame = prompt(
+  "Do you want to try again 'yes' or 'no'"
+).toLowerCase();
+continuegame === "yes"
+  ? playGame()
+  : console.log("thanks for playing, Have a good day");
