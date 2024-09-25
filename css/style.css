@@ -2,6 +2,7 @@ body {
   box-sizing: border-box;
   background-color: #f2f2ff;
   padding: 0;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   /* margin: 0; */
 }
 
@@ -27,6 +28,8 @@ h2 {
 }
 #buttonDiv > p {
   font-size: 4em;
+  color: lightseagreen;
+  font-weight: 200;
 }
 .buttonsGame {
   /* display: flex; */
