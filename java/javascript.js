@@ -10,8 +10,7 @@ let computerchoice = function getComputerChoice() {
   }
 };
 console.log("Designed By ST");
-// const computerSelection = computerchoice();
-// console.log(computerSelection);
+
 let humanchoice = function getHumanChoice() {
   let humanPrompt = prompt("Enter 'rock' 'paper' or 'scissors'").toLowerCase();
   if (
@@ -45,38 +44,38 @@ function playround(humanChoice, computerChoice) {
   }
 }
 
-function playGame() {
-  humanScore = 0;
-  computerScore = 0;
-  console.log("Game starting");
-  for (let i = 0; i < 5; i++) {
-    const humanSelection = humanchoice();
-    const computerSelection = computerchoice();
-    if (humanSelection !== null) {
-      console.log(`Round ${i + 1}:`);
-      console.log(`Human: ${humanSelection}, Computer:${computerSelection}`);
-      console.log(playround(humanSelection, computerSelection));
-      console.log(`Score : Human:${humanScore}, Computer:${computerScore}`);
-    } else {
-      console.log("Invalid entry");
-      i--;
-    }
-  }
+// function playGame() {
+//   humanScore = 0;
+//   computerScore = 0;
+//   console.log("Game starting");
+//   for (let i = 0; i < 5; i++) {
+//     const humanSelection = humanchoice();
+//     const computerSelection = computerchoice();
+//     if (humanSelection !== null) {
+//       console.log(`Round ${i + 1}:`);
+//       console.log(`Human: ${humanSelection}, Computer:${computerSelection}`);
+//       console.log(playround(humanSelection, computerSelection));
+//       console.log(`Score : Human:${humanScore}, Computer:${computerScore}`);
+//     } else {
+//       console.log("Invalid entry");
+//       i--;
+//     }
+//   }
 
-  if (humanScore > computerScore) {
-    console.log("congrats you won the game");
-  } else if (computerScore > humanScore) {
-    console.log("computer wins the game");
-  } else {
-    console.log("game is a draw");
-  }
-}
+// if (humanScore > computerScore) {
+//   console.log("congrats you won the game");
+// } else if (computerScore > humanScore) {
+//   console.log("computer wins the game");
+// } else {
+//   console.log("game is a draw");
+// }
+
 let humanScore = 0;
 let computerScore = 0;
-playGame();
-let continuegame = prompt(
-  "Do you want to try again 'yes' or 'no'"
-).toLowerCase();
-continuegame === "yes"
-  ? playGame()
-  : console.log("thanks for playing, Have a good day");
+// playGame();
+// let continuegame = prompt(
+//   "Do you want to try again 'yes' or 'no'"
+// ).toLowerCase();
+// // continuegame === "yes"
+//   ? playGame()
+//   : console.log("thanks for playing, Have a good day");

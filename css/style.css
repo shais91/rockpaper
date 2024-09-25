@@ -1,0 +1,89 @@
+body {
+  box-sizing: border-box;
+  background-color: #f2f2ff;
+  padding: 0;
+  /* margin: 0; */
+}
+
+h1 {
+  text-align: center;
+  font-size: 4em;
+  color: cornflowerblue;
+}
+h2 {
+  font-size: 3em;
+  /* text-decoration: solid underline black; */
+  color: yellowgreen;
+  text-align: center;
+}
+
+#buttonDiv {
+  display: flex;
+  /* flex: 1 wrap; */
+  flex-direction: column;
+  /* min-width: 100%; */
+  /* justify-content: center; */
+  align-items: center;
+}
+#buttonDiv > p {
+  font-size: 4em;
+}
+.buttonsGame {
+  /* display: flex; */
+  border: 7px solid cornflowerblue;
+  border-radius: 8px;
+  margin: 20px;
+  width: 50%;
+  height: 50%;
+  font-size: 2em;
+  padding: 10%;
+  color: blue;
+  opacity: 0.5;
+  transition: all 0.4s 0.2s linear;
+}
+.buttonsGame:hover {
+  /* background-color: lightgreen; */
+  opacity: 1;
+  border: 10px solid cornflowerblue;
+}
+
+#divButtonsGame {
+  display: flex;
+  /* align-content: space-around; */
+  /* flex-direction: row; */
+  justify-content: center;
+  gap: 60%;
+  /* flex: 1; */
+}
+
+.footer {
+  /* display: flex; */
+  /* margin-top: 180px; */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  justify-content: space-evenly;
+  background-color: cornflowerblue;
+  /* text-align: center; */
+}
+
+#footerDiv {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+}
+.contact-footer {
+  font-size: 20px;
+  border: 2px solid black;
+  background-color: lightblue;
+  border-radius: 10px;
+  opacity: 0.5;
+  transition: all 0.4s 0.2s linear;
+}
+
+.contact-footer:hover {
+  /* background-color: lightgreen; */
+  border: 4px solid black;
+  opacity: 1;
+}
