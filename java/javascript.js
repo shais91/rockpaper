@@ -1,5 +1,5 @@
-let computerchoice = function getComputerChoice() {
-  let mathrandom = Math.floor(Math.random() * 3) + 1;
+const computerchoice = function getComputerChoice() {
+  const mathrandom = Math.floor(Math.random() * 3) + 1;
   if (mathrandom === 1) {
     return "rock";
   }
@@ -9,40 +9,48 @@ let computerchoice = function getComputerChoice() {
     return "scissors";
   }
 };
-console.log("Designed By ST");
+console.log("Game Starts \n" + "Computer Choice: " + computerchoice());
 
-let humanchoice = function getHumanChoice() {
-  let humanPrompt = prompt("Enter 'rock' 'paper' or 'scissors'").toLowerCase();
-  if (
-    humanPrompt === "rock" ||
-    humanPrompt === "paper" ||
-    humanPrompt === "scissors"
-  ) {
-    return humanPrompt;
-  } else {
-    return null;
-  }
+let humanChoice = function (choice) {
+  console.log("Human choice : " + choice);
+  return choice;
 };
 
-function playround(humanChoice, computerChoice) {
-  if (humanChoice === null) {
-    return "Please enter valid value for rock paper or scissors";
-  }
-  if (humanChoice === computerChoice) {
-    return "Its a draw try again!";
-  }
-  if (
-    (humanChoice === "rock" && computerChoice === "scissors") ||
-    (humanChoice === "scissors" && computerChoice === "paper") ||
-    (humanChoice === "paper" && computerChoice === "rock")
-  ) {
-    humanScore++;
-    return "You win";
-  } else {
-    computerScore++;
-    return "computer wins";
-  }
-}
+let buttonRock = document.querySelector("#rockButton");
+buttonRock.addEventListener("click", () => {
+  humanChoice("rock");
+});
+let buttonScissor = document.querySelector("#scissorsButton");
+buttonScissor.addEventListener("click", () => {
+  humanChoice("scissors");
+});
+
+let buttonPaper = document.querySelector("#paperButton");
+buttonPaper.addEventListener("click", () => {
+  humanChoice("paper");
+});
+
+// let humanScore = 0;
+// let computerScore = 0;
+// let oneRound = function playround(humanChoice, computerChoice) {
+//   if (humanChoice === null) {
+//     return "Please enter valid value for rock paper or scissors";
+//   }
+//   if (humanChoice === computerChoice) {
+//     return "Its a draw try again!";
+//   }
+//   if (
+//     (humanChoice === "rock" && computerChoice === "scissors") ||
+//     (humanChoice === "scissors" && computerChoice === "paper") ||
+//     (humanChoice === "paper" && computerChoice === "rock")
+//   ) {
+//     humanScore++;
+//     return "You win";
+//   } else {
+//     computerScore++;
+//     return "computer wins";
+//   }
+// };
 
 // function playGame() {
 //   humanScore = 0;
@@ -60,7 +68,7 @@ function playround(humanChoice, computerChoice) {
 //       console.log("Invalid entry");
 //       i--;
 //     }
-//   }
+//   }}
 
 // if (humanScore > computerScore) {
 //   console.log("congrats you won the game");
@@ -70,12 +78,10 @@ function playround(humanChoice, computerChoice) {
 //   console.log("game is a draw");
 // }
 
-let humanScore = 0;
-let computerScore = 0;
-// playGame();
+// // playGame();
 // let continuegame = prompt(
 //   "Do you want to try again 'yes' or 'no'"
 // ).toLowerCase();
-// // continuegame === "yes"
+// continuegame === "yes"
 //   ? playGame()
 //   : console.log("thanks for playing, Have a good day");
