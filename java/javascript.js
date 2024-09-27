@@ -30,8 +30,9 @@ let humanscore = 0;
 let computerscore = 0;
 
 let humanChoice = function (choice) {
-  console.log("Game Starts \n" + "Computer Choice: " + computerchoice());
   const computerSelect = computerchoice();
+
+  console.log("Game Starts \n" + "Computer Choice: " + computerSelect);
 
   if (choice === null) {
     return "please select proper button";
