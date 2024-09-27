@@ -9,12 +9,6 @@ const computerchoice = function getComputerChoice() {
     return "scissors";
   }
 };
-console.log("Game Starts \n" + "Computer Choice: " + computerchoice());
-
-let humanChoice = function (choice) {
-  console.log("Human choice : " + choice);
-  return choice;
-};
 
 let buttonRock = document.querySelector("#rockButton");
 buttonRock.addEventListener("click", () => {
@@ -30,28 +24,59 @@ buttonPaper.addEventListener("click", () => {
   humanChoice("paper");
 });
 
+let appendHumanScore = document.querySelector("#humanScore");
+let appendComputerScore = document.querySelector("#computerScore");
+let humanscore = 0;
+let computerscore = 0;
+
+let humanChoice = function (choice) {
+  console.log("Game Starts \n" + "Computer Choice: " + computerchoice());
+  const computerSelect = computerchoice();
+
+  if (choice === null) {
+    return "please select proper button";
+  } else if (choice === computerSelect) {
+    console.log("Its a draw");
+    humanscore += 1;
+    computerscore += 1;
+  } else if (
+    (choice === "rock" && computerSelect === "scissors") ||
+    (choice === "scissors" && computerSelect === "paper") ||
+    (choice === "paper" && computerSelect === "rock")
+  ) {
+    console.log("human wins");
+    humanscore += 1;
+  } else {
+    console.log("computer wins");
+    computerscore += 1;
+  }
+  appendComputerScore.textContent = computerscore;
+  appendHumanScore.textContent = humanscore;
+};
+
 // let humanScore = 0;
 // let computerScore = 0;
-// let oneRound = function playround(humanChoice, computerChoice) {
-//   if (humanChoice === null) {
+// let oneRound = function playround(human1, computer2) {
+//   if (human1 === null) {
 //     return "Please enter valid value for rock paper or scissors";
 //   }
-//   if (humanChoice === computerChoice) {
+//   if (human1 === computer2) {
 //     return "Its a draw try again!";
 //   }
 //   if (
-//     (humanChoice === "rock" && computerChoice === "scissors") ||
-//     (humanChoice === "scissors" && computerChoice === "paper") ||
-//     (humanChoice === "paper" && computerChoice === "rock")
+//     (human1 === "rock" && computer2 === "scissors") ||
+//     (human1 === "scissors" && computer2 === "paper") ||
+//     (human1 === "paper" && computer2 === "rock")
 //   ) {
 //     humanScore++;
+//     console.log(humanScore);
 //     return "You win";
 //   } else {
 //     computerScore++;
+//     console.log(computerScore);
 //     return "computer wins";
 //   }
 // };
-
 // function playGame() {
 //   humanScore = 0;
 //   computerScore = 0;
@@ -68,7 +93,8 @@ buttonPaper.addEventListener("click", () => {
 //       console.log("Invalid entry");
 //       i--;
 //     }
-//   }}
+//   }
+// }
 
 // if (humanScore > computerScore) {
 //   console.log("congrats you won the game");
