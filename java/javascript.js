@@ -12,16 +12,16 @@ const computerchoice = function getComputerChoice() {
 
 let buttonRock = document.querySelector("#rockButton");
 buttonRock.addEventListener("click", () => {
-  humanChoice("rock");
+  gameFunction("rock");
 });
 let buttonScissor = document.querySelector("#scissorsButton");
 buttonScissor.addEventListener("click", () => {
-  humanChoice("scissors");
+  gameFunction("scissors");
 });
 
 let buttonPaper = document.querySelector("#paperButton");
 buttonPaper.addEventListener("click", () => {
-  humanChoice("paper");
+  gameFunction("paper");
 });
 
 let appendHumanScore = document.querySelector("#humanScore");
@@ -29,9 +29,13 @@ let appendComputerScore = document.querySelector("#computerScore");
 let humanscore = 0;
 let computerscore = 0;
 
-let humanChoice = function (choice) {
+let gameFunction = function (choice) {
+  if (humanscore >= 5 || computerscore >= 5) {
+    const WINNER = document.querySelector("#winner");
+    WINNER.innerHTML = "Game over, <br> Refresh the page to start again.";
+    return;
+  }
   const computerSelect = computerchoice();
-
   console.log("Game Starts \n" + "Computer Choice: " + computerSelect);
 
   if (choice === null) {
@@ -51,8 +55,23 @@ let humanChoice = function (choice) {
     console.log("computer wins");
     computerscore += 1;
   }
+
   appendComputerScore.textContent = computerscore;
   appendHumanScore.textContent = humanscore;
+
+  const WINNER = document.querySelector("#winner");
+
+  switch (true) {
+    case computerscore >= 5 && humanscore >= 5:
+      WINNER.textContent = "Its a draw, Try Again";
+      break;
+    case humanscore >= 5:
+      WINNER.textContent = "Congratulations, You Win";
+      break;
+    case computerscore >= 5:
+      WINNER.textContent = "Computer Wins, Try Again";
+      break;
+  }
 };
 
 // let humanScore = 0;
